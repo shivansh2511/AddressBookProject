@@ -1,0 +1,32 @@
+<div class="list-container">
+    <h2>Person Details</h2>
+    <button (click)="navigateToForm()">+ Add Person</button>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip Code</th>
+          <th>Phone Number</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of persons; let i = index">
+          <td>{{ person.fullName }}</td>
+          <td>{{ person.address }}</td>
+          <td>{{ person.city }}</td>
+          <td>{{ person.state }}</td>
+          <td>{{ person.zipCode }}</td>
+          <td>{{ person.phoneNumber }}</td>
+          <td>
+            <button (click)="confirmDelete(i)">🗑️</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

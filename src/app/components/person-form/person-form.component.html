@@ -1,0 +1,34 @@
+<div class="form-container">
+    <h2>Person Address Form</h2>
+    <form [formGroup]="personForm" (ngSubmit)="onSubmit()">
+      <label>Full Name</label>
+      <input type="text" formControlName="fullName" />
+  
+      <label>Phone Number</label>
+      <input type="text" formControlName="phoneNumber" />
+  
+      <label>Address</label>
+      <textarea formControlName="address"></textarea>
+  
+      <label>City</label>
+      <select formControlName="city">
+        <option value="">Select City</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Delhi">Delhi</option>
+      </select>
+  
+      <label>State</label>
+      <select formControlName="state">
+        <option value="">Select State</option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Delhi">Delhi</option>
+      </select>
+  
+      <label>Zip Code</label>
+      <input type="text" formControlName="zipCode" />
+  
+      <button type="submit" [disabled]="personForm.invalid">Add</button>
+      <button type="button" (click)="onReset()">Reset</button>
+    </form>
+  </div>
+  
